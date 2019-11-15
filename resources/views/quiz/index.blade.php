@@ -106,9 +106,6 @@
         </div>
     </div>
 </div>
-<!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="results" aria-hidden="true" id="resultModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -135,7 +132,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-secondary cancel-btn" data-dismiss="modal">Закрыть</button>
                 <button type="submit" class="btn btn-primary send-btn">Отправить</button>
             </div>
             </form>
@@ -213,7 +210,10 @@
             console.log(answers);
         });
 
-
+        $('.cancel-btn').on('click', function (e) {
+            e.preventDefault();
+            location.reload();
+        })
 
         $('.up').on('click', function (e) {
             let radioValue = $("input[name='answer']:checked").val();
